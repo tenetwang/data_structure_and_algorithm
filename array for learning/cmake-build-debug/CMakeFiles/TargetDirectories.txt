@@ -1,3 +1,0 @@
-D:/tenetwang/my_research/data_structure_and_algorithm/array for learning/cmake-build-debug/CMakeFiles/array_for_learning.dir
-D:/tenetwang/my_research/data_structure_and_algorithm/array for learning/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/tenetwang/my_research/data_structure_and_algorithm/array for learning/cmake-build-debug/CMakeFiles/rebuild_cache.dir
