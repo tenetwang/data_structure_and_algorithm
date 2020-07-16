@@ -1,0 +1,8 @@
+//
+// Created by admin on 2020/7/16.
+//
+
+#ifndef ARRAY_FOR_LEARNING_MEMORY_LOCATION_H
+#define ARRAY_FOR_LEARNING_MEMORY_LOCATION_H
+int test();
+#endif //ARRAY_FOR_LEARNING_MEMORY_LOCATION_H
