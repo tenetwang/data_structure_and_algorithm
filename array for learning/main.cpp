@@ -1,8 +1,12 @@
 #include <iostream>
 #include <array>
 #include "memory_location.h"
-#include "./src/rotation.h"
+#include "src/rotation/rotation.h"
 #include "./src/binarySearch.h"
+#include "./src/util/utility.h"
+#include "./src/arrange/arrange.h"
+#include "./src/order_statistics/order.h"
+#include "./src/heap/heap.h"
 using namespace std;
 
 void tree(int n){
@@ -47,18 +51,8 @@ int find_pivot(int arr[], int low, int high){
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    int arr[] = {1, 2, 3, 4, 5, 6,7,8,9,10,11,12,13,14,15};
-    //rotate_reversal(arr, sizeof(arr)/sizeof(arr[0]), 5);
-    print_array(arr, sizeof(arr)/sizeof(arr[0]));
-    int p;
-    //tree(10);
-    //int p=0, t = p;
-    //p = t++;
-    //cout << t << p <<endl;
-    p = find_pivot(brr, 0, 5);
-    cout << "pivot " << p << endl;
-    p = binarySearch(arr, 0, sizeof(arr)/sizeof(arr[0])-1, 1);
-    cout << "binarysearch " << p << endl;
-
-    return 0;
+    int arr[] = { 12, 3, 5, 7, 19 };
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout << kth_smallest_heap(arr, n, 2);
+    //printArray(arr, n);
 }
