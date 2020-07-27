@@ -16,6 +16,11 @@ MinHeap::MinHeap(int cap)
     harr = new int[cap];
 }
 
+// Destructor: Free the allocated memory
+MinHeap::~MinHeap() {
+    delete [] harr;
+}
+
 // Inserts a new key 'k'
 void MinHeap::insertKey(int k)
 {
@@ -65,7 +70,7 @@ int MinHeap::extractMin()
     int root = harr[0];
     harr[0] = harr[heap_size-1];
     heap_size--;
-    MinHeapify(0);
+    MinHeapify(0, heap_size);
 
     return root;
 }
@@ -81,7 +86,7 @@ void MinHeap::deleteKey(int i)
 
 // A recursive method to heapify a subtree with the root at given index
 // This method assumes that the subtrees are already heapified
-void MinHeap::MinHeapify(int i)
+void MinHeap::MinHeapify(int i, int heap_size)
 {
     int l = left(i);
     int r = right(i);
@@ -93,6 +98,36 @@ void MinHeap::MinHeapify(int i)
     if (smallest != i)
     {
         swap(&harr[i], &harr[smallest]);
-        MinHeapify(smallest);
+        MinHeapify(smallest, heap_size);
     }
+}
+
+void MinHeap::printHeap() {
+    for(int i=0; i<heap_size; i++){
+        cout << harr[i] << " ";
+    }
+    cout << endl;
+}
+
+void MinHeap::sortHeap() {
+    // swap every elements to the last place of harr and heapify
+    // in every turn i, i-th element of harr becomes the i-th smallest element
+    int temp_size = heap_size;
+    for(int i=0; i<heap_size; i++){
+        swap(&harr[temp_size-1], &harr[0]);
+        temp_size--;
+        MinHeapify(0, temp_size);
+    }
+    // now the harr is descended. reverse it
+    /*
+    for(int i=0; i<heap_size/2; i++){
+        swap(&harr[i], &harr[heap_size -1 -i]);
+    }
+     */
+
+    int i = 0, j = heap_size-1;
+    while(i<=j){
+        swap(&harr[i++], &harr[j--]);
+    }
+
 }

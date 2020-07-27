@@ -5,8 +5,10 @@
 #include "./src/binarySearch.h"
 #include "./src/util/utility.h"
 #include "./src/arrange/arrange.h"
-#include "./src/order_statistics/order.h"
+//#include "./src/order_statistics/order.h"
 #include "./src/heap/heap.h"
+#include "./src/query/query.h"
+#include "./src/optimization/opt.h"
 using namespace std;
 
 void tree(int n){
@@ -51,8 +53,21 @@ int find_pivot(int arr[], int low, int high){
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    int arr[] = { 12, 3, 5, 7, 19 };
-    int n = sizeof(arr)/sizeof(arr[0]);
-    cout << kth_smallest_heap(arr, n, 2);
-    //printArray(arr, n);
+
+
+    int price[] = {2, 30, 15, 10, 8, 25, 80};
+    int n = sizeof(price)/sizeof(price[0]);
+    cout << "Maximum Profit = " << maxProfit(price, n) << endl;
+
+    MinHeap mh(6);
+    int temp[] = {12, 11, 13, 5, 6, 7};
+    for(int i=0; i<6; i++){
+        mh.insertKey(temp[i]);
+    }
+    mh.printHeap();
+    mh.sortHeap();
+    mh.printHeap();
+
+
+    return 0;
 }

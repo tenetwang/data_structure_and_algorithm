@@ -14,8 +14,11 @@ public:
     // Constructor
     MinHeap(int capacity);
 
+    // Destructor
+    ~MinHeap();
+
     // to heapify a subtree with the root at given index
-    void MinHeapify(int );
+    void MinHeapify(int, int);
 
     int parent(int i) { return (i-1)/2; }
 
@@ -39,6 +42,12 @@ public:
 
     // Inserts a new key 'k'
     void insertKey(int k);
+
+    // Print the heap array
+    void printHeap();
+
+    // Sort the heap: ascending
+    void sortHeap();
 };
 
 

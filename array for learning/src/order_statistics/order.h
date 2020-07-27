@@ -6,4 +6,5 @@
 #define ARRAY_FOR_LEARNING_ORDER_H
 void kth_smallest(int [], int, int);
 int kth_smallest_heap(int [], int, int);
+int kth_smallest_STL(int [], int, int);
 #endif //ARRAY_FOR_LEARNING_ORDER_H
