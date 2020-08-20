@@ -59,9 +59,9 @@ int main() {
     int n = sizeof(price)/sizeof(price[0]);
     cout << "Maximum Profit = " << maxProfit(price, n) << endl;
 
-    MinHeap mh(6);
-    int temp[] = {12, 11, 13, 5, 6, 7};
-    for(int i=0; i<6; i++){
+    int temp[] = {10, 20, 10, 5};
+    MinHeap mh(sizeof(temp) / sizeof(temp[0]));
+    for(int i=0; i<4; i++){
         mh.insertKey(temp[i]);
     }
     mh.printHeap();
